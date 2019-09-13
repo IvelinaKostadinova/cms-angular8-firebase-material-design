@@ -1,0 +1,77 @@
+<nav class="navbar navbar-fixed-top" [class.navbar-top-nav]="navIsFixed">
+  <mat-toolbar style="background: transparent; color: rgba(255,255,255,.87);">
+    <mat-toolbar-row style="display: inline-table;">
+      <div class="navbar-header">
+        <a class="navbar-brand">
+            <img src="../../assets/mvm-logo.png" routerLink="/home" alt="logo">
+        </a>
+
+        <span class="example-spacer"></span>
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainMenu">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <span class="example-spacer"></span>
+
+      <div class="collapse navbar-collapse" id="mainMenu">
+        <ul class="nav navbar-nav">
+          <li><button mat-button routerLink="/home">Home</button></li>
+          <li><button mat-button routerLink="/home/services">Services</button></li>
+          <li><button mat-button routerLink="/home/work-us">Work with us</button></li>
+          <li><button mat-button (click)="scrollToBottom()">Contact us</button></li>
+          <li><button mat-button routerLink="/home/faq">FAQ</button></li>
+
+          <li><div *ngIf="! (user$ | async); else showAdmin">
+            <button mat-button routerLink="/home/login">Login</button>
+            <button mat-button routerLink="/home/register">Register</button>
+          </div></li>
+
+          <ng-template  #showAdmin>
+            <li><div *ngIf="user?.roles?.admin">
+                <button  class="ho" mat-button routerLink="/admin">Admin</button>
+            </div></li>
+          </ng-template>
+          <!-- *ngIf="userr.roles.admin" -->
+          <li><div *ngIf="user$ | async">
+            <button mat-button [matMenuTriggerFor]="menu">
+                <span>Hello {{user?.displayName}}</span>
+                <!-- <img class="profileImg" [src]="user.photoURL"> -->
+            </button>
+            <mat-menu #menu="matMenu" x-position="after" y-position="below" overlapTrigger="false">
+              <button mat-menu-item disabled>
+                <mat-icon>account_circle</mat-icon>
+                <span>Account Settings</span>
+              </button>
+              <button mat-menu-item routerLink="/home/user-bookings-courier">
+                  <mat-icon>exit_to_app</mat-icon>
+                  <span>My Courier bookings</span>
+                </button>
+                <button mat-menu-item routerLink="/home/user-bookings-removal">
+                  <mat-icon>exit_to_app</mat-icon>
+                  <span>My Removal bookings</span>
+                </button>
+                <button mat-menu-item (click)="afService.resetPassword(user?.email)">
+                  <mat-icon>exit_to_app</mat-icon>
+                  <span>Reset password</span>
+                </button>
+              <button mat-menu-item (click)="afService.logout(true, true)">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Log out</span>
+              </button>
+            </mat-menu>
+          </div></li>
+        </ul>
+      </div>
+
+          <!-- <div *ngFor="let menu of menusList">
+            <button mat-button routerLink="/home/pages/{{menu.url}}">{{menu.title}}</button>
+        </div> -->
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+  </nav>

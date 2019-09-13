@@ -1,0 +1,36 @@
+/*====================================================
+                        HOME
+======================================================*/
+#home {
+    /* height: responsive.css */
+}
+
+
+#home-cover {
+    /* height: responsive.css */
+    background-image: url("../../../assets/bg-home.jpg");
+}
+
+/* #home-cover-shade {
+    background-color: rgba(0, 0, 0, .3);
+} */
+
+#home-content-box {
+    width: 100%;
+    display: table;
+    background: rgb(0,0,0, 0.6);
+
+}
+
+#home-content-box-inner {
+    display: table-cell;
+    vertical-align: middle;
+    /* text-align: center; */
+}
+
+#home-heading h3 {
+    color: #fff;
+    font-size: 55px;
+    font-weight: 700;
+    margin: 20px 0 20px 0;
+}
