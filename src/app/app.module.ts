@@ -8,7 +8,6 @@ import { HomeModule } from './pages/home/home.module';
 import { MaterialModule } from './material.module';
 import { WINDOW_PROVIDERS } from './services/window.service';
 
-
 @NgModule({
   declarations: [
     AppComponent
