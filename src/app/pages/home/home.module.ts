@@ -10,20 +10,8 @@ import { MaterialModule } from '../../material.module';
 import { AfService } from '../../services/af.service';
 
 @NgModule({
-  providers: [
-    AfService
-  ],
-  imports: [
-    CommonModule,
-    HomeRouteModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MaterialModule
-  ],
-  declarations: [
-    HomeComponent,
-    NavbarComponent,
-    LoginComponent
-  ]
+  providers: [AfService],
+  imports: [CommonModule, HomeRouteModule, FormsModule, ReactiveFormsModule, MaterialModule],
+  declarations: [HomeComponent, NavbarComponent, LoginComponent]
 })
-export class HomeModule { }
+export class HomeModule {}

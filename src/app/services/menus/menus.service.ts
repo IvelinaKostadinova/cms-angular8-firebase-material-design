@@ -8,10 +8,8 @@ export interface Menu {
 
 @Injectable()
 export class MenusService {
-
-  constructor(
-    //private afs: AngularFirestore
-    ) { }
+  constructor() //private afs: AngularFirestore
+  {}
 
   getMenus() {
     // return this.afs.collection('menus').snapshotChanges()
@@ -42,5 +40,4 @@ export class MenusService {
   updateMenu(menuId, menu: Menu) {
     //this.afs.doc('menus/' + menuId).update(menu);
   }
-
 }

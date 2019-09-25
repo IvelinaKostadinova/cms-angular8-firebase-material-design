@@ -11,9 +11,7 @@ import { Observable } from 'rxjs';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-
 export class NavbarComponent implements OnInit {
-
   user$: Observable<IUser>;
   user: IUser;
   menusList: any;
@@ -24,7 +22,7 @@ export class NavbarComponent implements OnInit {
     //private menus: MenusService,
     @Inject(DOCUMENT) private document: Document,
     @Inject(WINDOW) private window: Window
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.user$ = this.afService.user$;
@@ -41,7 +39,8 @@ export class NavbarComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const number = this.window.pageYOffset || this.document.documentElement.scrollTop || this.document.body.scrollTop || 0;
+    const number =
+      this.window.pageYOffset || this.document.documentElement.scrollTop || this.document.body.scrollTop || 0;
     if (number > 50) {
       this.navIsFixed = true;
     } else if (this.navIsFixed && number < 10) {

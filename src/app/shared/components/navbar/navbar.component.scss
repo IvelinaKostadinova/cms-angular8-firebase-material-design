@@ -16,7 +16,7 @@
 .navbar-header > a > img {
   width: 58px;
   height: 40px;
-  background: rgba(256,256,256,0.3);
+  background: rgba(256, 256, 256, 0.3);
   cursor: pointer;
   outline: none;
 }
@@ -26,8 +26,8 @@
 ======================================================*/
 .navbar {
   /* padding: 20px 0; */
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .navbar-top-nav {
   background: rgba(0, 0, 0, 0.7);
@@ -42,7 +42,9 @@
   float: right;
 }
 
-.navbar-nav>li>button, .navbar-nav>li>div>button, .ho {
+.navbar-nav > li > button,
+.navbar-nav > li > div > button,
+.ho {
   color: #fff;
   font-size: 15px;
   text-transform: uppercase;
@@ -50,9 +52,12 @@
   font-weight: 700;
 }
 
-.navbar-nav>li>button:hover, .navbar-nav>li>button:focus,
-.navbar-nav>li>div>button:hover, .navbar-nav>li>div>button:focus,
-.ho:hover, .ho:focus {
+.navbar-nav > li > button:hover,
+.navbar-nav > li > button:focus,
+.navbar-nav > li > div > button:hover,
+.navbar-nav > li > div > button:focus,
+.ho:hover,
+.ho:focus {
   background: #34c6d3;
 }
 
@@ -70,6 +75,6 @@
   max-height: none !important;
 }
 
-.vesco-top-nav ul.navbar-nav>li.active>a {
+.vesco-top-nav ul.navbar-nav > li.active > a {
   color: #34c6d3;
 }

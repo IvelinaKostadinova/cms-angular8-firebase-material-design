@@ -3,7 +3,7 @@
     <mat-toolbar-row style="display: inline-table;">
       <div class="navbar-header">
         <a class="navbar-brand">
-            <img src="../../assets/mvm-logo.png" routerLink="/home" alt="logo">
+          <img src="../../assets/mvm-logo.png" routerLink="/home" alt="logo" />
         </a>
 
         <span class="example-spacer"></span>
@@ -26,28 +26,33 @@
           <li><button mat-button (click)="scrollToBottom()">Contact us</button></li>
           <li><button mat-button routerLink="/faq">FAQ</button></li>
 
-          <li><div *ngIf="! (user$ | async); else showAdmin">
-            <button mat-button routerLink="/login">Login</button>
-            <button mat-button routerLink="/register">Register</button>
-          </div></li>
+          <li>
+            <div *ngIf="!(user$ | async); else showAdmin">
+              <button mat-button routerLink="/login">Login</button>
+              <button mat-button routerLink="/register">Register</button>
+            </div>
+          </li>
 
-          <ng-template  #showAdmin>
-            <li><div *ngIf="user?.roles?.admin">
-                <button  class="ho" mat-button routerLink="/admin">Admin</button>
-            </div></li>
+          <ng-template #showAdmin>
+            <li>
+              <div *ngIf="user?.roles?.admin">
+                <button class="ho" mat-button routerLink="/admin">Admin</button>
+              </div>
+            </li>
           </ng-template>
           <!-- *ngIf="userr.roles.admin" -->
-          <li><div *ngIf="user$ | async">
-            <button mat-button [matMenuTriggerFor]="menu">
-                <span>Hello {{user?.displayName}}</span>
+          <li>
+            <div *ngIf="user$ | async">
+              <button mat-button [matMenuTriggerFor]="menu">
+                <span>Hello {{ user?.displayName }}</span>
                 <!-- <img class="profileImg" [src]="user.photoURL"> -->
-            </button>
-            <mat-menu #menu="matMenu" x-position="after" y-position="below" overlapTrigger="false">
-              <button mat-menu-item disabled>
-                <mat-icon>account_circle</mat-icon>
-                <span>Account Settings</span>
               </button>
-              <button mat-menu-item routerLink="/home/user-bookings-courier">
+              <mat-menu #menu="matMenu" x-position="after" y-position="below" overlapTrigger="false">
+                <button mat-menu-item disabled>
+                  <mat-icon>account_circle</mat-icon>
+                  <span>Account Settings</span>
+                </button>
+                <button mat-menu-item routerLink="/home/user-bookings-courier">
                   <mat-icon>exit_to_app</mat-icon>
                   <span>My Courier bookings</span>
                 </button>
@@ -59,19 +64,19 @@
                   <mat-icon>exit_to_app</mat-icon>
                   <span>Reset password</span>
                 </button>
-              <button mat-menu-item (click)="afService.logout(true, true)">
-                <mat-icon>exit_to_app</mat-icon>
-                <span>Log out</span>
-              </button>
-            </mat-menu>
-          </div></li>
+                <button mat-menu-item (click)="afService.logout(true, true)">
+                  <mat-icon>exit_to_app</mat-icon>
+                  <span>Log out</span>
+                </button>
+              </mat-menu>
+            </div>
+          </li>
         </ul>
       </div>
 
-          <!-- <div *ngFor="let menu of menusList">
+      <!-- <div *ngFor="let menu of menusList">
             <button mat-button routerLink="/home/pages/{{menu.url}}">{{menu.title}}</button>
         </div> -->
-
     </mat-toolbar-row>
   </mat-toolbar>
-  </nav>
+</nav>

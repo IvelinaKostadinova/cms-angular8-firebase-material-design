@@ -2,34 +2,31 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 //import { AngularFireAuth } from 'angularfire2/auth';
 //import { AngularFirestore } from 'angularfire2/firestore';
-import { Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { IUser, User } from '../models/user.model';
 //import { MessageService } from '@app/service/message.service';
 //import { UserService } from '@app/service/fb-base.service';
 
 @Injectable()
 export class AfService {
-
   user$: Observable<IUser>;
   token: string;
 
   constructor(
-      //public afAuth: AngularFireAuth,
-      //public afs: AngularFirestore,
-      private router: Router,
-      //private messageService: MessageService,
-      //private userService: UserService
+    //public afAuth: AngularFireAuth,
+    //public afs: AngularFirestore,
+    private router: Router //private messageService: MessageService, //private userService: UserService
   ) {
-      // this.user$ = afAuth.authState
-      //   .switchMap(user => {
-      //     // console.log(user);
-      //     if (user) {
-      //       return this.userService.getConditionalItems('uid', '==', user.uid);
-      //       // return this.afs.doc<IUser>(`users/${user.uid}`).valueChanges();
-      //     } else {
-      //       return Observable.of(null);
-      //     }
-      //   });
+    // this.user$ = afAuth.authState
+    //   .switchMap(user => {
+    //     // console.log(user);
+    //     if (user) {
+    //       return this.userService.getConditionalItems('uid', '==', user.uid);
+    //       // return this.afs.doc<IUser>(`users/${user.uid}`).valueChanges();
+    //     } else {
+    //       return Observable.of(null);
+    //     }
+    //   });
   }
 
   signupUser(user: User) {
@@ -47,7 +44,7 @@ export class AfService {
     //     reject(err);
     //   });
     // }
-  //);
+    //);
   }
 
   resetPassword(email: string) {

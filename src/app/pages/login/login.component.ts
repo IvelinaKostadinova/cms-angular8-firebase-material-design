@@ -11,12 +11,10 @@ import { IUser } from '../../models/user.model';
 export class LoginComponent implements OnInit {
   user: IUser;
   passwordCorrect = true;
-  constructor(
-    public afService: AfService
-    ) { }
+  constructor(public afService: AfService) {}
 
   ngOnInit() {
-    this.afService.user$.subscribe(user => this.user = user);
+    this.afService.user$.subscribe(user => (this.user = user));
   }
   onSignin(form: NgForm) {
     const email = form.value.email;

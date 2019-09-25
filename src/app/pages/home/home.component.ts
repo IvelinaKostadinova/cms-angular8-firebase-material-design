@@ -6,21 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onActivate(event) {
     const scrollToTop = window.setInterval(() => {
       const pos = window.pageYOffset;
       if (pos > 0) {
-          window.scrollTo(0, pos - 20); // how far to scroll on each step
+        window.scrollTo(0, pos - 20); // how far to scroll on each step
       } else {
-          window.clearInterval(scrollToTop);
+        window.clearInterval(scrollToTop);
       }
     }, 16);
   }
-
 }
