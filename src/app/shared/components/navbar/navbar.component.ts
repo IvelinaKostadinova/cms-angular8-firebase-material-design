@@ -1,18 +1,18 @@
 import { Component, OnInit, HostListener, Inject } from '@angular/core';
-import { AfService } from '../../services/af.service';
+import { AfService } from '../../../services/af.service';
 //import { MenusService } from '../../services/menus/menus.service';
-import { IUser } from '../../models/user.model';
+import { IUser } from '../../../models/user.model';
 import { DOCUMENT } from '@angular/common';
-import { WINDOW } from '../../services/window.service';
+import { WINDOW } from '../../../services/window.service';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: './app-navbar.component.html',
-  styleUrls: ['./app-navbar.component.css']
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
 
-export class AppNavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit {
 
   user$: Observable<IUser>;
   user: IUser;

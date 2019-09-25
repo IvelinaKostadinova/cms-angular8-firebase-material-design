@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRouteModule } from './app.route';
 import { AppComponent } from './app.component';
 import { HomeModule } from './pages/home/home.module';
 
@@ -15,7 +15,7 @@ import { WINDOW_PROVIDERS } from './services/window.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRouteModule,
     HomeModule,
     MaterialModule
   ],
