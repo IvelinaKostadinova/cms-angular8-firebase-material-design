@@ -1,0 +1,81 @@
+<div class="col-md-10 col-md-offset-1">
+  <form (ngSubmit)="onSignup()" #f="ngForm">
+    <!-- Full name -->
+    <div class="form-group row">
+      <label for="name">Full name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="this.data.displayName"
+        class="form-control"
+        #fullname="ngModel"
+        required
+      />
+      <p *ngIf="!fullname.valid && fullname.touched">Please enter your name!</p>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group row">
+      <label for="email">Mail</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="this.data.email"
+        class="form-control"
+        #email="ngModel"
+        email
+        required
+      />
+      <p *ngIf="!email.valid && email.touched">Please enter a valid email!</p>
+    </div>
+
+    <!-- Phone -->
+    <div class="form-group row">
+      <label for="phone">Phone</label>
+      <input
+        type="text"
+        id="phone"
+        name="phone"
+        [(ngModel)]="this.data.phone"
+        class="form-control"
+        #phone="ngModel"
+        required
+      />
+      <p *ngIf="!phone.valid && phone.touched">Please enter a phone number!</p>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group row">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="this.data.password"
+        class="form-control"
+        (blur)="onPasswordBlur()"
+        #password="ngModel"
+      />
+      <p *ngIf="!this.passSixChars && password.touched">Password should be at least 6 characters!</p>
+    </div>
+
+    <!-- Repeat Password -->
+    <div class="form-group row">
+      <label for="passwordconfirm">Confirm password</label>
+      <input
+        type="password"
+        id="passwordconfirm"
+        name="passwordconfirm"
+        (blur)="onConfirmPasswordBlur()"
+        [(ngModel)]="confirmPassword"
+        class="form-control"
+        #confPassword="ngModel"
+      />
+      <p *ngIf="!this.passMatchFlag && confPassword.touched">Password does not match!</p>
+    </div>
+
+    <button class="btn-general submit" type="submit">Sign Up</button>
+  </form>
+</div>
