@@ -11,10 +11,11 @@ import { FaqComponent } from '../faq/faq.component';
 import { WorkUsComponent } from '../work-us/work-us.component';
 import { MaterialModule } from '../../material.module';
 import { AfService } from '../../services/af.service';
+import { UserService } from '../../services/fb-base.service';
 import { MessageService } from 'src/app/services/message.service';
 
 @NgModule({
-  providers: [AfService, MessageService],
+  providers: [AfService, MessageService, UserService],
   imports: [CommonModule, HomeRouteModule, FormsModule, ReactiveFormsModule, MaterialModule],
   declarations: [HomeComponent, NavbarComponent, LoginComponent, RegisterComponent, FaqComponent, WorkUsComponent]
 })
