@@ -13,10 +13,19 @@ import { MaterialModule } from '../../material.module';
 import { AfService } from '../../services/af.service';
 import { UserService } from '../../services/fb-base.service';
 import { MessageService } from 'src/app/services/message.service';
+import { ForgottenPassComponent } from '../forgotten-pass/forgotten-pass.component';
 
 @NgModule({
   providers: [AfService, MessageService, UserService],
   imports: [CommonModule, HomeRouteModule, FormsModule, ReactiveFormsModule, MaterialModule],
-  declarations: [HomeComponent, NavbarComponent, LoginComponent, RegisterComponent, FaqComponent, WorkUsComponent]
+  declarations: [
+    HomeComponent,
+    NavbarComponent,
+    LoginComponent,
+    RegisterComponent,
+    FaqComponent,
+    WorkUsComponent,
+    ForgottenPassComponent
+  ]
 })
 export class HomeModule {}
