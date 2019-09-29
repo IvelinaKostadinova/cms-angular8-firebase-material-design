@@ -12,7 +12,7 @@ import { WorkUsComponent } from '../work-us/work-us.component';
 import { MaterialModule } from '../../material.module';
 import { AfService } from '../../services/af.service';
 import { UserService } from '../../services/fb-base.service';
-import { MessageService } from 'src/app/services/message.service';
+import { MessageService, WarningSnackbarComponent } from 'src/app/services/message.service';
 import { ForgottenPassComponent } from '../forgotten-pass/forgotten-pass.component';
 
 @NgModule({
@@ -25,7 +25,8 @@ import { ForgottenPassComponent } from '../forgotten-pass/forgotten-pass.compone
     RegisterComponent,
     FaqComponent,
     WorkUsComponent,
-    ForgottenPassComponent
+    ForgottenPassComponent,
+    WarningSnackbarComponent
   ]
 })
 export class HomeModule {}
