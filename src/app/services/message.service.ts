@@ -1,6 +1,16 @@
 import { Injectable, NgZone, Component } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material';
 
+@Component({
+  // tslint:disable-next-line:component-selector
+  selector: 'info-snackbar',
+  template:
+    '<span style="background-color: orange; color:black"><mat-icon>account_circle</mat-icon> Warning: {{warningContent}}</span>'
+})
+export class WarningSnackbarComponent {
+  warningContent: any;
+}
+
 @Injectable()
 export class MessageService {
   config = new MatSnackBarConfig();
@@ -22,14 +32,4 @@ export class MessageService {
       snackbarRef.instance.warningContent = message;
     });
   }
-}
-
-@Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'info-snackbar',
-  template:
-    '<span style="background-color: orange; color:black"><mat-icon>account_circle</mat-icon> Warning: {{warningContent}}</span>'
-})
-export class WarningSnackbarComponent {
-  warningContent: any;
 }
