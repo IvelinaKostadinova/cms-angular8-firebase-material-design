@@ -8,8 +8,7 @@
     "format": "prettier --write \"src/**/*.+(js|ts|css|scss|json|md|html|component.html)\"",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "deploy": "gh-pages -d dist"
+    "e2e": "ng e2e"
   },
   "private": true,
   "homepage": "https://ivelinakostadinova.github.io/cms-angular8-firebase-material-design",
@@ -27,7 +26,6 @@
     "angularfire2": "^5.2.1",
     "bootstrap": "^3.3.7",
     "firebase": "^7.0.0",
-    "gh-pages": "^2.1.1",
     "jquery": "3.3.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
@@ -55,7 +53,8 @@
     "typescript": "~3.4.3",
     "prettier": "~1.18.2",
     "husky": "^2.4.1",
-    "lint-staged": "^8.2.1"
+    "lint-staged": "^8.2.1",
+    "angular-cli-ghpages": "0.6.0-rc.2"
   },
   "husky": {
     "hooks": {
